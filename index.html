@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATHENA — Combat Sports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img src="images/logo.png" alt="ATHENA" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#disciplines" class="nav-link">Disciplines</a></li>
+        <li><a href="#nutrition" class="nav-link">Nutrition</a></li>
+        <li><a href="#fighters" class="nav-link">Fighters</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="#chatbot" class="nav-link">Assistant</a></li>
+        <li><a href="#news" class="nav-link">News</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span id="themeIcon">☀</span>
+        </button>
+
+        <button class="btn btn-primary" onclick="window.location.href = 'signin.html'">
+          Sign In
+        </button>
+        <button class="btn btn-primary" onclick="window.location.href = 'join.html'">
+          Join
+        </button>
+
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag reveal">
+        <span class="tag-line"></span>
+        THE ART OF COMBAT
+      </div>
+      <h1 class="hero-title reveal">
+        FORGE YOUR<br /><span class="gold">WARRIOR</span><br />SPIRIT
+      </h1>
+      <p class="hero-sub reveal">
+        From Boxing to Brazilian Jiu-Jitsu, from Muay Thai to MMA — Athena
+        connects you to every discipline, every fighter, every fight.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#disciplines" class="btn btn-primary btn-lg">Explore Disciplines</a>
+        <a href="#events" class="btn btn-ghost btn-lg">Upcoming Events</a>
+      </div>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat">
+        <span class="stat-number" data-count="12">0</span>
+        <span class="stat-label">Disciplines</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="4800">0</span>
+        <span class="stat-label">Registered Fighters</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="350">0</span>
+        <span class="stat-label">Events / Year</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="92">0</span>
+        <span class="stat-label">Countries</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="disciplines" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">DISCIPLINES</span>
+        <h2 class="section-title">
+          CHOOSE YOUR <span class="gold">PATH</span>
+        </h2>
+        <p class="section-desc">
+          Every fighting style carries its own philosophy, technique, and
+          history.
+        </p>
+      </div>
+
+      <div class="disciplines-grid" id="disciplinesGrid">
+        <a href="boxing.html" class="discipline-card reveal" data-sport="boxing">
+          <div class="card-bg boxing-bg"></div>
+          <div class="card-overlay"></div>
+
+          <div class="card-content">
+            <h3>BOXING</h3>
+
+            <p>
+              The sweet science. Footwork, head movement, and the pursuit of
+              the perfect punch.
+            </p>
+
+            <div class="card-meta">
+              <span class="meta-tag">Striking</span>
+              <span class="meta-tag">Olympic</span>
+            </div>
+
+            <div class="card-hover-line"></div>
+          </div>
+        </a>
+
+        <div class="discipline-card reveal" data-sport="mma">
+          <div class="card-bg mma-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>MMA</h3>
+            <p>
+              The complete fighter. Striking, grappling, and everything in
+              between.
+            </p>
+            <div class="card-meta">
+              <span class="meta-tag">Hybrid</span>
+              <span class="meta-tag">Full Contact</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal" data-sport="muay-thai">
+          <div class="card-bg muaythai-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>MUAY THAI</h3>
+            <p>
+              The art of eight limbs. Fists, elbows, knees, and shins as
+              weapons.
+            </p>
+            <div class="card-meta">
+              <span class="meta-tag">Striking</span>
+              <span class="meta-tag">Clinch</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal" data-sport="bjj">
+          <div class="card-bg bjj-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>BRAZILIAN JIU-JITSU</h3>
+            <p>
+              The gentle art. Leverage and technique to submit any opponent.
+            </p>
+            <div class="card-meta">
+              <span class="meta-tag">Grappling</span>
+              <span class="meta-tag">Ground</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal" data-sport="wrestling">
+          <div class="card-bg wrestling-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>WRESTLING</h3>
+            <p>The oldest sport. Control, takedowns, and dominance.</p>
+            <div class="card-meta">
+              <span class="meta-tag">Grappling</span>
+              <span class="meta-tag">Olympic</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal" data-sport="kickboxing">
+          <div class="card-bg kickboxing-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>KICKBOXING</h3>
+            <p>
+              Punches meet kicks. Dutch style, K-1 rules, pure excitement.
+            </p>
+            <div class="card-meta">
+              <span class="meta-tag">Striking</span>
+              <span class="meta-tag">Full Contact</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal" data-sport="judo">
+          <div class="card-bg judo-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>JUDO</h3>
+            <p>The gentle way. Throws, pins, and submissions with gi.</p>
+            <div class="card-meta">
+              <span class="meta-tag">Grappling</span>
+              <span class="meta-tag">Olympic</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal" data-sport="karate">
+          <div class="card-bg karate-bg"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>KARATE</h3>
+            <p>
+              Empty hand. Precision strikes and the discipline of the dojo.
+            </p>
+            <div class="card-meta">
+              <span class="meta-tag">Striking</span>
+              <span class="meta-tag">Traditional</span>
+            </div>
+            <div class="card-hover-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nutrition" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">NUTRITION</span>
+        <h2 class="section-title">
+          FUEL YOUR <span class="gold">FIGHT</span>
+        </h2>
+        <p class="section-desc">
+          Calculate your estimated daily calorie needs based on your body
+          measurements and activity level.
+        </p>
+      </div>
+
+      <div class="nutrition-grid">
+        <div class="nutrition-form reveal">
+          <div class="nutrition-input-group">
+            <label for="nutritionAge">Age</label>
+            <input type="number" id="nutritionAge" min="1" max="120" placeholder="Enter your age" />
+          </div>
+
+          <div class="nutrition-input-group">
+            <label for="nutritionHeight">Height (cm)</label>
+            <input type="number" id="nutritionHeight" min="50" max="250" placeholder="Enter your height" />
+          </div>
+
+          <div class="nutrition-input-group">
+            <label for="nutritionWeight">Weight (kg)</label>
+            <input type="number" id="nutritionWeight" min="10" max="300" placeholder="Enter your weight" />
+          </div>
+
+          <div class="nutrition-input-group">
+            <label for="nutritionGender">Gender</label>
+            <select id="nutritionGender">
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="nutrition-input-group">
+            <label for="nutritionActivity">Activity Level</label>
+            <select id="nutritionActivity">
+              <option value="">Select activity level</option>
+              <option value="1.2">Sedentary</option>
+              <option value="1.375">Lightly Active</option>
+              <option value="1.55">Moderately Active</option>
+              <option value="1.725">Very Active</option>
+              <option value="1.9">Extremely Active</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary nutrition-calculate" id="nutritionCalculate" type="button">
+            Calculate
+          </button>
+
+          <p class="nutrition-error" id="nutritionError"></p>
+        </div>
+
+        <div class="nutrition-results reveal">
+          <div class="nutrition-result-card">
+            <span class="nutrition-result-icon">🔥</span>
+            <span class="nutrition-result-label">BMR</span>
+            <strong id="nutritionBmr">—</strong>
+            <small>Calories / day at rest</small>
+          </div>
+
+          <div class="nutrition-result-card featured">
+            <span class="nutrition-result-icon">⚡</span>
+            <span class="nutrition-result-label">DAILY NEED</span>
+            <strong id="nutritionTdee">—</strong>
+            <small>Estimated calories / day</small>
+          </div>
+
+          <div class="nutrition-result-card">
+            <span class="nutrition-result-icon">🏃</span>
+            <span class="nutrition-result-label">ACTIVITY</span>
+            <strong id="nutritionActivityResult">—</strong>
+            <small>Activity multiplier</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="nutrition-note reveal">
+        <span>⚠️</span>
+        <p>
+          These numbers are estimates for educational purposes and can vary
+          between individuals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fighters" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">ROSTER</span>
+        <h2 class="section-title">
+          LEGENDS OF <span class="gold">THE CAGE</span>
+        </h2>
+        <p class="section-desc">The warriors who define their eras.</p>
+      </div>
+
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="boxing">Boxing</button>
+        <button class="filter-btn" data-filter="mma">MMA</button>
+        <button class="filter-btn" data-filter="muay-thai">Muay Thai</button>
+        <button class="filter-btn" data-filter="bjj">BJJ</button>
+        <button class="filter-btn" data-filter="kickboxing">
+          Kickboxing
+        </button>
+      </div>
+
+      <div class="fighters-grid" id="fightersGrid"></div>
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">EVENTS</span>
+        <h2 class="section-title">
+          UPCOMING <span class="gold">BATTLES</span>
+        </h2>
+        <p class="section-desc">Mark your calendar. Witness history.</p>
+      </div>
+
+      <div class="events-list" id="eventsList"></div>
+    </div>
+  </section>
+
+  <section id="news" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">NEWS</span>
+        <h2 class="section-title">
+          LATEST FROM <span class="gold">THE MAT</span>
+        </h2>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+        <article class="news-card reveal">
+          <div class="news-image news-img-1"></div>
+          <div class="news-content">
+            <span class="news-date">Aug 20, 2026</span>
+            <h3>Championship Fight Announced for November Card</h3>
+            <p></p>
+            <a href="#" class="news-link">Read More <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="news-card reveal">
+          <div class="news-image news-img-2"></div>
+          <div class="news-content">
+            <span class="news-date">Aug 18, 2026</span>
+            <h3>Rising Star Signs Multi-Fight Deal</h3>
+            <p>
+              The 22-year-old phenom from Dagestan has officially signed with
+              the promotion after a stunning knockout victory.
+            </p>
+            <a href="#" class="news-link">Read More <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="news-card reveal">
+          <div class="news-image news-img-3"></div>
+          <div class="news-content">
+            <span class="news-date">Aug 15, 2026</span>
+            <h3>Olympic Judo Team Announced</h3>
+            <p>
+              After months of trials, the national judo squad is finalized
+              with three debutants making the cut.
+            </p>
+            <a href="#" class="news-link">Read More <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="chatbot" class="section chatbot-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">ATHENA AI</span>
+        <h2 class="section-title">
+          FIGHTER <span class="gold">ASSISTANT</span>
+        </h2>
+        <p class="section-desc">
+          Choose your language and explore ATHENA's combat sports guide.
+        </p>
+      </div>
+
+      <div class="chatbot-container reveal">
+        <div class="chatbot-header">
+          <div>
+            <span class="chatbot-status"></span>
+            <strong>ATHENA Assistant</strong>
+          </div>
+
+          <button id="chatbotReset" class="chatbot-reset" type="button">
+            Reset
+          </button>
+        </div>
+
+        <div class="chatbot-messages" id="chatbotMessages"></div>
+
+        <div class="chatbot-options" id="chatbotOptions"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>READY TO <span class="gold">STEP IN?</span></h2>
+        <p>Join thousands of fighters, fans, and coaches on Athena.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" id="ctaRegister">
+            Create Account
+          </button>
+          <button class="btn btn-outline btn-lg" id="ctaLogin">
+            Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-icon">⚔️</span>
+            <span class="logo-text">ATHENA</span>
+          </a>
+          <p>The ultimate combat sports platform. Fight. Learn. Evolve.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Disciplines</h4>
+          <a href="#disciplines">Boxing</a>
+          <a href="#disciplines">MMA</a>
+          <a href="#disciplines">Muay Thai</a>
+          <a href="#disciplines">BJJ</a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="#fighters">Fighters</a>
+          <a href="#events">Events</a>
+          <a href="#news">News</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="#">Contact</a>
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ATHENA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

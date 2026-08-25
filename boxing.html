@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ATHENA — Boxing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="boxing.css">
+</head>
+
+<body>
+
+<nav id="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="ATHENA">
+        </a>
+
+        <div class="nav-actions">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+            >
+                <span id="themeIcon">☀</span>
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="window.location.href='signin.html'"
+            >
+                Sign In
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="window.location.href='join.html'"
+            >
+                Join
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<section class="sport-hero boxing-page">
+
+    <div class="sport-overlay"></div>
+
+    <div class="sport-content">
+
+        <span class="section-tag">
+            DISCIPLINE
+        </span>
+
+        <h1>
+            <span class="gold">BOXING</span>
+        </h1>
+
+        <p>
+            The sweet science.
+            Footwork, timing, defense, and the pursuit of the perfect punch.
+        </p>
+
+        <div class="sport-buttons">
+
+            <a href="#about" class="btn btn-primary">
+                Explore Boxing
+            </a>
+
+            <a href="index.html#disciplines" class="btn btn-outline">
+                ← All Disciplines
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="sport-section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                BOXING
+            </span>
+
+            <h2 class="section-title">
+                THE <span class="gold">SWEET SCIENCE</span>
+            </h2>
+
+            <p class="section-desc">
+                Boxing is a combat sport focused on precise punching,
+                movement, defense, timing, and strategy.
+            </p>
+
+        </div>
+
+        <div class="sport-grid">
+
+            <div class="sport-info-card">
+                <span>🥊</span>
+                <h3>STRIKING</h3>
+                <p>
+                    Develop punches, combinations, distance control,
+                    and defensive movement.
+                </p>
+            </div>
+
+            <div class="sport-info-card">
+                <span>⚡</span>
+                <h3>FOOTWORK</h3>
+                <p>
+                    Learn how movement and positioning create opportunities
+                    while maintaining balance.
+                </p>
+            </div>
+
+            <div class="sport-info-card">
+                <span>🧠</span>
+                <h3>STRATEGY</h3>
+                <p>
+                    Read your opponent, manage distance, and build an
+                    effective fight strategy.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-bottom">
+            <p>© 2026 ATHENA. All rights reserved.</p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="boxing.js"></script>
+
+</body>
+</html>

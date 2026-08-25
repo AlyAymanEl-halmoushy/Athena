@@ -1,0 +1,216 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ATHENA — Join</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="join.css">
+</head>
+
+<body>
+
+<nav id="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="ATHENA">
+        </a>
+
+        <div class="nav-actions">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                <span id="themeIcon">☀</span>
+            </button>
+
+            <button
+                class="btn btn-outline"
+                onclick="window.location.href='signin.html'"
+            >
+                Sign In
+            </button>
+
+        </div>
+    </div>
+</nav>
+
+
+<main class="join-page">
+
+    <div class="join-background"></div>
+    <div class="join-overlay"></div>
+
+    <div class="gold-circle circle-one"></div>
+    <div class="gold-circle circle-two"></div>
+
+    <section class="join-section">
+
+        <div class="join-header">
+
+            <span class="section-tag">
+                <span class="tag-line"></span>
+                ATHENA MEMBERSHIP
+            </span>
+
+            <h1>
+                JOIN THE
+                <span class="gold">WARRIORS</span>
+            </h1>
+
+            <p>
+                Create your ATHENA account and become part of the combat sports community.
+            </p>
+
+        </div>
+
+
+        <div class="join-card">
+
+            <div class="card-top">
+                <span>CREATE ACCOUNT</span>
+                <span class="card-number">01</span>
+            </div>
+
+
+            <form id="joinForm">
+
+                <div class="form-group">
+                    <label for="fullName">FULL NAME</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                    >
+
+                    <small class="error" id="nameError"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">EMAIL ADDRESS</label>
+
+                    <input
+    type="email"
+    id="joinEmail"
+    placeholder="Enter your email"
+    required
+>
+
+                    <small class="error" id="emailError"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">PASSWORD</label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                        >
+                            SHOW
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <span id="strengthBar"></span>
+                        </div>
+
+                        <span id="strengthText">
+                            PASSWORD STRENGTH
+                        </span>
+                    </div>
+
+                    <small class="error" id="passwordError"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="confirmPassword">CONFIRM PASSWORD</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                    >
+
+                    <small class="error" id="confirmError"></small>
+                </div>
+
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                    >
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                    </span>
+
+                </label>
+
+                <small class="error terms-error" id="termsError"></small>
+
+
+<button type="button" class="btn btn-primary" id="createAccount">
+    CREATE ACCOUNT →
+</button>
+
+            </form>
+
+
+            <div class="login-footer">
+
+                <span>Already have an account?</span>
+
+                <a href="signin.html">
+                    SIGN IN →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="join-footer-text">
+            <span class="line"></span>
+            FIGHT · LEARN · EVOLVE
+            <span class="line"></span>
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="join.js"></script>
+
+</body>
+</html>

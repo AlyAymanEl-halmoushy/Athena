@@ -1,0 +1,911 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg: #0a0a0a;
+    --card: #151515;
+    --gold: #c9a227;
+    --gold-light: #e5c45a;
+    --white: #f5f5f5;
+    --muted: #9b9b9b;
+    --border: rgba(201, 162, 39, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* ==================== NAVBAR ==================== */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(14px);
+}
+
+.nav-container {
+    width: min(94%, 1400px);
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ==================== LOGO ==================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+    display: block;
+
+    filter: drop-shadow(
+        0 0 6px rgba(201, 162, 39, 0.3)
+    );
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.08);
+
+    filter: drop-shadow(
+        0 0 14px rgba(201, 162, 39, 0.6)
+    );
+}
+
+
+/* ==================== NAV ACTIONS ==================== */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* ==================== BUTTONS ==================== */
+
+.btn {
+    border: 1px solid transparent;
+    padding: 11px 20px;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    transition: all 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #080808;
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(201, 162, 39, 0.22);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--gold-light);
+    border-color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+
+/* ==================== THEME ==================== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(201, 162, 39, 0.5);
+
+    background: transparent;
+    color: var(--gold-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--gold);
+    color: #080808;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================== JOIN PAGE ==================== */
+
+.join-page {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 130px 20px 70px;
+
+    overflow: hidden;
+}
+
+
+/* ==================== BACKGROUND ==================== */
+
+.join-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(201, 162, 39, 0.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(201, 162, 39, 0.07),
+            transparent 28%
+        ),
+        url('https://images.pexels.com/photos/4761799/pexels-photo-4761799.jpeg?auto=compress&cs=tinysrgb&w=1920')
+        center / cover no-repeat;
+
+    filter: grayscale(25%) contrast(1.1);
+
+    transform: scale(1.04);
+}
+
+.join-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.92)
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            var(--bg)
+        );
+}
+
+
+/* ==================== DECORATION ==================== */
+
+.gold-circle {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border: 1px solid rgba(201, 162, 39, 0.08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: rotateCircle 25s linear infinite;
+}
+
+.gold-circle::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 35px;
+
+    border: 1px solid rgba(201, 162, 39, 0.06);
+
+    border-radius: 50%;
+}
+
+.circle-one {
+    left: -210px;
+    bottom: -100px;
+}
+
+.circle-two {
+    right: -220px;
+    top: 120px;
+
+    animation-direction: reverse;
+}
+
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==================== JOIN SECTION ==================== */
+
+.join-section {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 520px);
+}
+
+
+/* ==================== HEADER ==================== */
+
+.join-header {
+    text-align: center;
+
+    margin-bottom: 28px;
+
+    animation: revealUp 0.8s ease forwards;
+}
+
+.section-tag {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.tag-line {
+    width: 38px;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+.join-header h1 {
+    margin-top: 15px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(55px, 8vw, 82px);
+
+    line-height: 0.9;
+
+    letter-spacing: 2px;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.join-header p {
+    max-width: 430px;
+
+    margin: 15px auto 0;
+
+    color: #999;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* ==================== CARD ==================== */
+
+.join-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 25, 25, 0.98),
+            rgba(12, 12, 12, 0.98)
+        );
+
+    border: 1px solid rgba(201, 162, 39, 0.2);
+
+    padding: 30px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    animation: cardAppear 0.8s 0.15s ease both;
+
+    position: relative;
+}
+
+.join-card::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 65px;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+
+/* ==================== CARD TOP ==================== */
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid #282828;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.card-number {
+    color: #555;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 22px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================== FORM ==================== */
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: #0c0c0c;
+
+    border: 1px solid #303030;
+
+    color: var(--white);
+
+    outline: none;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: #555;
+}
+
+.form-group input:focus {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(201, 162, 39, 0.07);
+
+    transform: translateY(-1px);
+}
+
+.form-group input.invalid {
+    border-color: #a93636;
+}
+
+
+/* ==================== PASSWORD ==================== */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--gold);
+
+    cursor: pointer;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.password-strength {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 7px;
+}
+
+.strength-bar {
+    height: 3px;
+
+    flex: 1;
+
+    background: #252525;
+
+    overflow: hidden;
+}
+
+.strength-bar span {
+    display: block;
+
+    width: 0%;
+    height: 100%;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+#strengthText {
+    width: 105px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-align: right;
+}
+
+
+/* ==================== ERROR ==================== */
+
+.error {
+    display: block;
+
+    min-height: 14px;
+
+    margin-top: 5px;
+
+    color: #c95b5b;
+
+    font-size: 9px;
+}
+
+
+/* ==================== TERMS ==================== */
+
+.terms {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 4px 0 0;
+
+    color: #888;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.terms input {
+    width: 14px;
+    height: 14px;
+
+    accent-color: var(--gold);
+
+    cursor: pointer;
+}
+
+.terms a {
+    color: var(--gold);
+
+    transition: color 0.2s ease;
+}
+
+.terms a:hover {
+    color: var(--gold-light);
+}
+
+.terms-error {
+    min-height: 16px;
+}
+
+
+/* ==================== JOIN BUTTON ==================== */
+
+.join-button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.join-button .arrow {
+    font-size: 18px;
+
+    transition: transform 0.25s ease;
+}
+
+.join-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* ==================== LOGIN FOOTER ==================== */
+
+.login-footer {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 22px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #252525;
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+.login-footer a {
+    color: var(--gold);
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: color 0.2s ease;
+}
+
+.login-footer a:hover {
+    color: var(--gold-light);
+}
+
+
+/* ==================== BOTTOM TEXT ==================== */
+
+.join-footer-text {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    color: #4f4f4f;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.join-footer-text .line {
+    width: 35px;
+    height: 1px;
+
+    background: #333;
+}
+
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ==================== LIGHT MODE ==================== */
+
+body.light-mode {
+    --bg: rgb(251, 242, 213);
+    --card: #ffffff;
+    --gold: #d2a316;
+    --gold-light: #8a6700;
+    --white: #222;
+    --muted: #666;
+
+    background: var(--bg);
+
+    color: #222;
+}
+
+body.light-mode #navbar {
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .join-background {
+    filter: grayscale(30%) brightness(0.85);
+}
+
+body.light-mode .join-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(251, 242, 213, 0.93),
+            rgba(251, 242, 213, 0.75),
+            rgba(251, 242, 213, 0.93)
+        );
+}
+
+body.light-mode .join-header p {
+    color: #666;
+}
+
+body.light-mode .join-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(248, 248, 248, 0.98)
+        );
+
+    border-color: rgba(166, 124, 0, 0.25);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .card-top,
+body.light-mode .login-footer {
+    border-color: #ddd;
+}
+
+body.light-mode .form-group input {
+    background: #f7f7f7;
+
+    color: #222;
+
+    border-color: #ccc;
+}
+
+body.light-mode .form-group input::placeholder {
+    color: #888;
+}
+
+body.light-mode .form-group input:focus {
+    border-color: var(--gold);
+}
+
+body.light-mode .password-strength .strength-bar {
+    background: #ddd;
+}
+
+body.light-mode .terms {
+    color: #666;
+}
+
+body.light-mode .join-footer-text {
+    color: #777;
+}
+
+body.light-mode .join-footer-text .line {
+    background: #bbb;
+}
+
+body.light-mode .theme-toggle {
+    background: #fff;
+
+    color: var(--gold-light);
+
+    border-color: rgba(166, 124, 0, 0.3);
+}
+
+
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 600px) {
+
+    #navbar {
+        height: 68px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-container {
+        width: 92%;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .nav-actions .btn {
+        padding: 9px 12px;
+        font-size: 9px;
+    }
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .join-page {
+        padding: 105px 15px 50px;
+    }
+
+    .join-header h1 {
+        font-size: 58px;
+    }
+
+    .join-card {
+        padding: 23px 18px;
+    }
+
+    .join-header p {
+        font-size: 11px;
+    }
+
+    .login-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .gold-circle {
+        display: none;
+    }
+}
+

@@ -1,0 +1,625 @@
+:root {
+    --bg: #090909;
+    --bg-secondary: #111111;
+    --card: #171717;
+    --text: #ffffff;
+    --muted: #a5a5a5;
+    --gold: #e5b94c;
+    --gold-light: #f2ce68;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+body.light {
+    --bg: #f4f4f4;
+    --bg-secondary: #ffffff;
+    --card: #ffffff;
+    --text: #111111;
+    --muted: #666666;
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background:
+        rgba(9, 9, 9, 0.82);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid var(--border);
+
+    z-index: 1000;
+}
+
+body.light .navbar {
+    background:
+        rgba(255, 255, 255, 0.85);
+}
+
+.logo {
+    color: var(--gold);
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid var(--border);
+
+    background: var(--card);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    transform:
+        rotate(20deg)
+        scale(1.08);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("YOUR_WRESTLING_IMAGE_HERE");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.7) 80%
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+
+    padding: 30px;
+
+    animation:
+        heroReveal 1s ease forwards;
+}
+
+.hero-small {
+    color: var(--gold);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-size:
+        clamp(55px, 9vw, 130px);
+
+    line-height: 0.9;
+
+    margin: 20px 0;
+
+    font-weight: 900;
+
+    letter-spacing: 7px;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #d0d0d0;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: var(--gold-light);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(229, 185, 76, 0.25);
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 100px 6%;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin:
+        0 auto 55px;
+}
+
+.section-heading > span {
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    font-size:
+        clamp(35px, 5vw, 55px);
+
+    margin:
+        12px 0 18px;
+}
+
+.section-heading p {
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+/* ================= INFO ================= */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.info-card {
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d1d,
+            var(--card)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    transition: 0.35s;
+}
+
+.info-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(229, 185, 76, 0.45);
+}
+
+.card-icon {
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* ================= TRAINING ================= */
+
+.training-section {
+    background:
+        linear-gradient(
+            180deg,
+            var(--bg),
+            var(--bg-secondary)
+        );
+}
+
+.training-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.training-card {
+    padding: 35px;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.training-card:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(229, 185, 76, 0.45);
+}
+
+.number {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.training-card h3 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.training-card p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* ================= BENEFITS ================= */
+
+.benefits-container {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.benefit-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 25px 0;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.benefit-item span {
+    color: var(--gold);
+
+    font-weight: 900;
+
+    min-width: 35px;
+}
+
+.benefit-item p {
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+    padding: 120px 6%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #28210f,
+            #0b0b0b 65%
+        );
+}
+
+.cta span {
+    color: var(--gold);
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+.cta h2 {
+    font-size:
+        clamp(40px, 6vw, 70px);
+
+    margin: 15px 0;
+}
+
+.cta p {
+    color: var(--muted);
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 45px 6%;
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--muted);
+}
+
+.footer-logo {
+    color: var(--gold);
+
+    font-size: 26px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+.copyright {
+    margin-top: 15px;
+
+    font-size: 13px;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+}

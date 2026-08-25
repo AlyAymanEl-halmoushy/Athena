@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ATHENA — Sign In</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesignin.css">
+</head>
+
+<body>
+
+    <div class="signin-page">
+
+        <div class="arena-light light-one"></div>
+        <div class="arena-light light-two"></div>
+
+        <div class="signin-background"></div>
+        <div class="signin-overlay"></div>
+
+        <div class="signin-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚔️</span>
+                <span class="logo-text">ATHENA</span>
+            </a>
+
+            <div class="signin-card">
+
+                <div class="card-glow"></div>
+
+                <div class="signin-header">
+                    <span class="section-tag">WELCOME BACK</span>
+
+                    <h1>
+                        SIGN <span>IN</span>
+                    </h1>
+
+                    <div class="title-line"></div>
+
+                    <p>
+                        Enter your credentials and return to the fight.
+                    </p>
+                </div>
+
+                <form id="signinForm" novalidate>
+
+                    <div class="input-group">
+                        <label for="email">EMAIL</label>
+
+                        <div class="input-wrapper">
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                            >
+
+                            <span class="input-line"></span>
+                        </div>
+
+                        <small class="input-error" id="emailError"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">PASSWORD</label>
+
+                        <div class="input-wrapper password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                            >
+                                SHOW
+                            </button>
+
+                            <span class="input-line"></span>
+                        </div>
+
+                        <small class="input-error" id="passwordError"></small>
+                    </div>
+
+                    <div class="signin-options">
+
+                        <label class="remember">
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#" id="forgotPassword" class="forgot">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="signin-button"
+                        id="signinButton"
+                    >
+                        <span class="button-text">SIGN IN</span>
+                        <span class="button-arrow">→</span>
+                    </button>
+
+                    <div
+                        class="signin-message"
+                        id="signinMessage"
+                    ></div>
+
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="register-link">
+                    <p>Don't have an ATHENA account?</p>
+
+                    <a href="#" id="createAccount">
+                        CREATE ACCOUNT
+                    </a>
+                </div>
+
+            </div>
+
+            <a href="index.html" class="back-home">
+                ← BACK TO ATHENA
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="signinscript.js"></script>
+
+</body>
+</html>
