@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            name: "saenchai",
+            name: "Buakaw Banchamek",
             discipline: "Muay Thai",
             country: "Thailand",
             image: images.muayThai_2
