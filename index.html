@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ATHENA — Combat Sports</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -25,17 +26,20 @@
         <li><a href="#events" class="nav-link">Events</a></li>
         <li><a href="#news" class="nav-link">News</a></li>
         <li><a href="#chatbot" class="nav-link">Assistant</a></li>
-        
       </ul>
-<div class="nav-actions">
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
-    <span id="themeIcon">☀</span>
-  </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span id="themeIcon">☀</span>
+        </button>
 
-  <a href="signin.html" class="btn btn-primary btn-nav">Sign In</a>
-  <a href="join.html" class="btn btn-primary btn-nav">Join</a>
+        <a href="signin.html" class="btn btn-primary btn-nav">Sign In</a>
+        <a href="join.html" class="btn btn-primary btn-nav">Join</a>
 
-</div>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
@@ -56,8 +60,8 @@
         connects you to every discipline, every fighter, every fight.
       </p>
       <div class="hero-cta reveal">
-        <a href="#disciplines" class="btn btn-primary btn-lg1">Explore Disciplines</a>
-        <a href="#events" class="btn btn-primary btn-lg2">Upcoming Events</a>
+        <a href="#disciplines" class="btn btn-primary btn-lg">Explore Disciplines</a>
+        <a href="#events" class="btn btn-primary btn-lg">Upcoming Events</a>
       </div>
     </div>
     <div class="hero-stats reveal">
@@ -336,14 +340,12 @@
       </div>
 
       <div class="filter-bar reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="boxing">Boxing</button>
-        <button class="filter-btn" data-filter="mma">MMA</button>
-        <button class="filter-btn" data-filter="muay-thai">Muay Thai</button>
-        <button class="filter-btn" data-filter="bjj">BJJ</button>
-        <button class="filter-btn" data-filter="kickboxing">
-          Kickboxing
-        </button>
+        <button class="filter-btn active" type="button" data-filter="all">All</button>
+        <button class="filter-btn" type="button" data-filter="boxing">Boxing</button>
+        <button class="filter-btn" type="button" data-filter="mma">MMA</button>
+        <button class="filter-btn" type="button" data-filter="muay-thai">Muay Thai</button>
+        <button class="filter-btn" type="button" data-filter="bjj">BJJ</button>
+        <button class="filter-btn" type="button" data-filter="kickboxing">Kickboxing</button>
       </div>
 
       <div class="fighters-grid" id="fightersGrid"></div>
@@ -379,7 +381,10 @@
           <div class="news-content">
             <span class="news-date">Aug 20, 2026</span>
             <h3>Championship Fight Announced for November Card</h3>
-            <p></p>
+            <p>
+              The promotion has confirmed a title bout headlining the
+              November card, with both camps already in full preparation.
+            </p>
             <a href="#" class="news-link">Read More <span>→</span></a>
           </div>
         </article>
@@ -443,6 +448,7 @@
       </div>
     </div>
   </section>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
