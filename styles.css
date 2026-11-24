@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap');
-
 :root {
     --bg: #0a0a0a;
     --bg-soft: #111111;
@@ -11,6 +9,7 @@
     --border: rgba(201, 162, 39, 0.25);
     --danger: #8d2020;
     --max-width: 1200px;
+    --nav-height: 78px;
 }
 
 * {
@@ -40,6 +39,25 @@ button {
     font: inherit;
 }
 
+/* No outlines / lines around buttons and links */
+a,
+button {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+button:focus,
+a:focus-visible,
+button:focus-visible {
+    outline: none;
+}
+
+/* Keep anchored sections from hiding under the fixed navbar */
+section[id] {
+    scroll-margin-top: var(--nav-height);
+}
+
 .container {
     width: min(92%, var(--max-width));
     margin: 0 auto;
@@ -60,7 +78,7 @@ button {
 
 .nav-container {
     width: min(94%, 1400px);
-    min-height: 78px;
+    min-height: var(--nav-height);
     margin: auto;
     display: flex;
     align-items: center;
@@ -134,11 +152,11 @@ button {
 /* ==================== BUTTONS ==================== */
 
 .btn {
-    display: inline-flex;            /* عشان الـtransform يشتغل على <a> و <button> */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: 1px solid transparent;
+    border: none;
     padding: 11px 20px;
     cursor: pointer;
     text-transform: uppercase;
@@ -151,7 +169,7 @@ button {
     will-change: transform;
     backface-visibility: hidden;
     transition: transform 0.25s ease, background 0.25s ease,
-                color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+                color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn:active {
@@ -169,35 +187,35 @@ button {
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-/* زرار Upcoming Events (كان ناقص تعريف) */
+.btn-primary:active {
+    transform: translateY(0) scale(0.97);
+}
+
 .btn-ghost {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.35);
 }
 
 .btn-ghost:hover {
     background: var(--gold);
-    border-color: var(--gold);
     color: #080808;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-/* زرار View Event (كان ناقص تعريف) */
 .btn-outline {
-    background: transparent;
+    background: rgba(201, 162, 39, 0.15);
     color: var(--gold-light);
-    border-color: var(--gold);
 }
 
 .btn-outline:hover {
     background: var(--gold);
     color: #080808;
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-/* زراير الـHero: نفس المقاس بالظبط */
+/* Hero buttons: identical size and animation */
 .btn-lg {
     min-width: 210px;
     height: 52px;
@@ -205,7 +223,7 @@ button {
     font-size: 13px;
 }
 
-/* Sign In و Join: نفس المقاس بالظبط (شغالة حتى لو مفيش كلاس btn-nav) */
+/* Sign In & Join: identical size */
 .nav-actions .btn,
 .btn-nav {
     width: 100px;
@@ -219,8 +237,8 @@ button {
     width: 42px;
     height: 42px;
     padding: 8px;
-    border: 1px solid #444;
-    background: transparent;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
     cursor: pointer;
 }
 
@@ -348,6 +366,7 @@ button {
     left: 50%;
     bottom: 25px;
     transform: translateX(-50%);
+    z-index: 2;
 }
 
 .mouse {
@@ -388,6 +407,8 @@ button {
 }
 
 .section-dark {
+    position: relative;
+    overflow: hidden;
     background:
         linear-gradient(rgba(10, 10, 10, 0.97), rgba(10, 10, 10, 0.97)),
         repeating-linear-gradient(
@@ -427,6 +448,7 @@ button {
 
 .discipline-card {
     position: relative;
+    display: block;
     min-height: 330px;
     overflow: hidden;
     background: var(--card);
@@ -445,7 +467,7 @@ button {
     inset: 0;
     background-position: center;
     background-size: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .discipline-card:hover .card-bg {
@@ -558,8 +580,8 @@ button {
 
 .filter-btn {
     padding: 9px 17px;
-    border: 1px solid #333;
-    background: transparent;
+    border: none;
+    background: #1c1c1c;
     color: #aaa;
     cursor: pointer;
     font-size: 11px;
@@ -572,7 +594,6 @@ button {
 .filter-btn:hover,
 .filter-btn.active {
     background: var(--gold);
-    border-color: var(--gold);
     color: #080808;
 }
 
@@ -886,7 +907,7 @@ button {
 @media (max-width: 800px) {
     .nav-links {
         position: absolute;
-        top: 78px;
+        top: 100%;
         left: 0;
         width: 100%;
         display: none;
@@ -905,9 +926,6 @@ button {
     .nav-links li {
         padding: 13px 0;
     }
-
-    /* تم حذف: .nav-actions .btn { display: none; }
-       عشان Sign In و Join يفضلوا ظاهرين على الموبايل */
 
     .nav-actions .btn,
     .btn-nav {
@@ -936,6 +954,10 @@ button {
         grid-template-columns: 1fr 1fr;
     }
 
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+
     .event-card {
         grid-template-columns: 80px 1fr;
     }
@@ -947,8 +969,13 @@ button {
 }
 
 @media (max-width: 560px) {
+    :root {
+        --nav-height: 68px;
+    }
+
     .nav-container {
         min-height: 68px;
+        gap: 12px;
     }
 
     .nav-actions {
@@ -995,7 +1022,8 @@ button {
     .disciplines-grid,
     .fighters-grid,
     .news-grid,
-    .footer-grid {
+    .footer-grid,
+    .nutrition-results {
         grid-template-columns: 1fr;
     }
 
@@ -1077,21 +1105,12 @@ button {
     pointer-events: none;
 }
 
-.section-dark {
-    position: relative;
-    overflow: hidden;
-}
-
 .section-dark::before {
     right: -190px;
     top: 15%;
     box-shadow:
         0 0 0 35px rgba(201, 162, 39, 0.025),
         0 0 0 70px rgba(201, 162, 39, 0.018);
-}
-
-.cta-section {
-    position: relative;
 }
 
 .cta-section::before {
@@ -1107,8 +1126,8 @@ button {
 .theme-toggle {
     width: 42px;
     height: 42px;
-    border: 1px solid rgba(201, 162, 39, 0.5);
-    background: transparent;
+    border: none;
+    background: rgba(201, 162, 39, 0.12);
     color: var(--gold-light);
     display: flex;
     align-items: center;
@@ -1234,14 +1253,22 @@ body.light-mode .news-content p {
 }
 
 body.light-mode .filter-btn {
-    border-color: #cccccc;
+    background: #f0e8cc;
     color: #555;
 }
 
 body.light-mode .filter-btn:hover,
 body.light-mode .filter-btn.active {
     background: var(--gold);
-    border-color: var(--gold);
+    color: #ffffff;
+}
+
+body.light-mode .btn-outline {
+    background: rgba(138, 103, 0, 0.12);
+}
+
+body.light-mode .btn-outline:hover {
+    background: var(--gold);
     color: #ffffff;
 }
 
@@ -1275,7 +1302,7 @@ body.light-mode .footer-bottom {
 }
 
 body.light-mode .hamburger {
-    border-color: #bbbbbb;
+    background: rgba(0, 0, 0, 0.06);
 }
 
 body.light-mode .hamburger span {
@@ -1289,7 +1316,6 @@ body.light-mode .nav-links {
 body.light-mode .theme-toggle {
     background: #ffffff;
     color: var(--gold-light);
-    border: 1px solid var(--border);
 }
 
 body.light-mode .theme-toggle:hover {
@@ -1574,8 +1600,8 @@ body.light-mode .nutrition-note {
 
 .chatbot-option {
     padding: 11px 16px;
-    border: 1px solid #383838;
-    background: transparent;
+    border: none;
+    background: #1f1f1f;
     color: var(--white);
     cursor: pointer;
     font-family: 'Inter', sans-serif;
@@ -1588,7 +1614,6 @@ body.light-mode .nutrition-note {
 
 .chatbot-option:hover {
     background: var(--gold);
-    border-color: var(--gold);
     color: #111;
     transform: translateY(-2px);
 }
@@ -1615,11 +1640,12 @@ body.light-mode .chatbot-options {
 }
 
 body.light-mode .chatbot-option {
-    border-color: #ccc;
+    background: #f0e8cc;
     color: #333;
 }
 
 body.light-mode .chatbot-option:hover {
+    background: var(--gold);
     color: #fff;
 }
 
@@ -1671,7 +1697,7 @@ body.light-mode .chatbot-option:hover {
     filter: drop-shadow(0 0 14px rgba(201, 162, 39, 0.6));
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .logo img {
         width: 45px;
         height: 45px;
@@ -1713,6 +1739,7 @@ body.light-mode .chatbot-option:hover {
 .success-icon {
     width: 38px;
     height: 38px;
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
@@ -1769,10 +1796,6 @@ body.light-mode .success-notification b {
 }
 
 /* ==================== DISCIPLINE CARD EXPLORE LABEL ==================== */
-
-.discipline-card {
-    cursor: pointer;
-}
 
 .discipline-card::after {
     content: "EXPLORE →";
