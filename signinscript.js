@@ -74,7 +74,7 @@ passwordInput.addEventListener("input", function () {
 });
 
 
-signinForm.addEventListener("submit", function (event) {
+signinForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
