@@ -196,15 +196,10 @@ forgotPassword.addEventListener("click", function (event) {
     signinMessage.className =
         "signin-message success";
 });
-
-
 createAccount.addEventListener("click", function (event) {
-
     event.preventDefault();
-
     signinMessage.textContent =
         "Account registration will be available soon.";
-
     signinMessage.className =
         "signin-message success";
 });
