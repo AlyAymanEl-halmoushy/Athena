@@ -136,7 +136,7 @@ button {
     padding: 11px 20px;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 800;
     letter-spacing: 1px;
     transition: all 0.25s ease;
@@ -153,28 +153,6 @@ button {
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-.btn-outline {
-    background: transparent;
-    color: var(--gold-light);
-    border-color: var(--gold);
-}
-
-.btn-outline:hover {
-    background: var(--gold);
-    color: #080808;
-}
-
-.btn-ghost {
-    background: rgb(210 163 21);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: black;
-}
-
-.btn-ghost:hover {
-    background: rgb(75, 57, 3);
-    border-color: var(--gold);
-    color: rgb(255, 255, 255);
-}
 
 .btn-lg {
     padding: 15px 28px;
