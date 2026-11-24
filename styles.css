@@ -130,8 +130,11 @@ button {
     align-items: center;
     gap: 10px;
 }
+
+/* ==================== BUTTONS ==================== */
+
 .btn {
-    display: inline-flex;            /* مهم عشان الـtransform يشتغل على <a> */
+    display: inline-flex;            /* عشان الـtransform يشتغل على <a> و <button> */
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -166,7 +169,7 @@ button {
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-/* الزرار التاني في الـHero (كان ناقص) */
+/* زرار Upcoming Events (كان ناقص تعريف) */
 .btn-ghost {
     background: transparent;
     color: #fff;
@@ -181,7 +184,7 @@ button {
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-/* زرار View Event كمان مكانش معرّف */
+/* زرار View Event (كان ناقص تعريف) */
 .btn-outline {
     background: transparent;
     color: var(--gold-light);
@@ -202,13 +205,13 @@ button {
     font-size: 13px;
 }
 
-/* Sign In و Join: نفس المقاس بالظبط (ونفس ارتفاع زرار الثيم) */
+/* Sign In و Join: نفس المقاس بالظبط (شغالة حتى لو مفيش كلاس btn-nav) */
+.nav-actions .btn,
 .btn-nav {
     width: 100px;
     height: 42px;
     padding: 0;
     font-size: 13px;
-}
 }
 
 .hamburger {
@@ -903,8 +906,20 @@ button {
         padding: 13px 0;
     }
 
-    .nav-actions .btn {
-        display: none;
+    /* تم حذف: .nav-actions .btn { display: none; }
+       عشان Sign In و Join يفضلوا ظاهرين على الموبايل */
+
+    .nav-actions .btn,
+    .btn-nav {
+        width: 72px;
+        height: 38px;
+        font-size: 11px;
+    }
+
+    .theme-toggle,
+    .hamburger {
+        width: 38px;
+        height: 38px;
     }
 
     .hamburger {
@@ -936,6 +951,17 @@ button {
         min-height: 68px;
     }
 
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-actions .btn,
+    .btn-nav {
+        width: 62px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
     .logo-text {
         font-size: 27px;
     }
@@ -957,8 +983,9 @@ button {
         align-items: stretch;
     }
 
-    .hero-cta .btn {
-        text-align: center;
+    .hero-cta .btn-lg {
+        width: 100%;
+        min-width: 0;
     }
 
     .section {
@@ -1269,6 +1296,7 @@ body.light-mode .theme-toggle:hover {
     background: var(--gold);
     color: #080808;
 }
+
 /* ==================== NUTRITION ==================== */
 
 .nutrition-grid {
@@ -1441,6 +1469,7 @@ body.light-mode .nutrition-input-group select option {
 body.light-mode .nutrition-note {
     background: rgba(166, 124, 0, 0.06);
 }
+
 /* ==================== CHATBOT ==================== */
 
 .chatbot-section {
@@ -1618,11 +1647,7 @@ body.light-mode .chatbot-option:hover {
 
 }
 
-
-
-
-
-
+/* ==================== LOGO ==================== */
 
 .logo {
     display: flex;
@@ -1652,6 +1677,9 @@ body.light-mode .chatbot-option:hover {
         height: 45px;
     }
 }
+
+/* ==================== SUCCESS NOTIFICATION ==================== */
+
 .success-notification {
     position: fixed;
     top: 100px;
@@ -1739,6 +1767,9 @@ body.light-mode .success-notification b {
         min-width: auto;
     }
 }
+
+/* ==================== DISCIPLINE CARD EXPLORE LABEL ==================== */
+
 .discipline-card {
     cursor: pointer;
 }
