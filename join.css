@@ -139,18 +139,6 @@ input {
         0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
-.btn-outline {
-    background: transparent;
-    color: var(--gold-light);
-    border-color: var(--gold);
-}
-
-.btn-outline:hover {
-    background: var(--gold);
-    color: #080808;
-}
-
-
 /* ==================== THEME ==================== */
 
 .theme-toggle {
