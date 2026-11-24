@@ -130,16 +130,29 @@ button {
     align-items: center;
     gap: 10px;
 }
-
 .btn {
+    display: inline-flex;            /* مهم عشان الـtransform يشتغل على <a> */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border: 1px solid transparent;
     padding: 11px 20px;
     cursor: pointer;
     text-transform: uppercase;
+    text-align: center;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 1px;
-    transition: all 0.25s ease;
+    line-height: 1;
+    white-space: nowrap;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform 0.25s ease, background 0.25s ease,
+                color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.97);
 }
 
 .btn-primary {
@@ -153,10 +166,49 @@ button {
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
 }
 
+/* الزرار التاني في الـHero (كان ناقص) */
+.btn-ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.35);
+}
 
+.btn-ghost:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #080808;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.22);
+}
+
+/* زرار View Event كمان مكانش معرّف */
+.btn-outline {
+    background: transparent;
+    color: var(--gold-light);
+    border-color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #080808;
+    transform: translateY(-2px);
+}
+
+/* زراير الـHero: نفس المقاس بالظبط */
 .btn-lg {
-    padding: 15px 28px;
+    min-width: 210px;
+    height: 52px;
+    padding: 0 28px;
     font-size: 13px;
+}
+
+/* Sign In و Join: نفس المقاس بالظبط (ونفس ارتفاع زرار الثيم) */
+.btn-nav {
+    width: 100px;
+    height: 42px;
+    padding: 0;
+    font-size: 13px;
+}
 }
 
 .hamburger {
