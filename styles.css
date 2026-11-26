@@ -12,6 +12,7 @@
     --nav-height: 78px;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -1145,30 +1146,31 @@ section[id] {
 
 /* ==================== LIGHT MODE ==================== */
 
-
 body.light-mode {
-    --bg: #f6efdc;
-    --bg-soft: #efe5c9;
-    --card: #fffdf6;
-    --gold: #c9961a;
-    --gold-light: #7a5600;
-    --white: #2a2216;
-    --muted: #6f6450;
+    --bg: #f7f5f0;
+    --bg-soft: #eeeae0;
+    --card: #ffffff;
+    --gold: #c9a227;
+    --gold-light: #8a6d0b;
+    --white: #111111;
+    --muted: #6b6b6b;
     --border: transparent;
     --danger: #8d2020;
 
     background: var(--bg);
-    color: #2a2216;
+    color: #111111;
 }
 
+/* ---------- Navbar ---------- */
+
 body.light-mode #navbar {
-    background: rgba(255, 252, 242, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     border-bottom: none;
-    box-shadow: 0 6px 24px rgba(110, 80, 10, 0.10);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode .nav-link {
-    color: #5c5240;
+    color: #444444;
 }
 
 body.light-mode .nav-link:hover,
@@ -1176,23 +1178,70 @@ body.light-mode .nav-link.active {
     color: var(--gold-light);
 }
 
-body.light-mode .hero-bg {
-    filter: brightness(0.8);
+body.light-mode .nav-links {
+    background: rgba(255, 255, 255, 0.98);
+    border: none;
 }
 
-body.light-mode .hero-overlay {
-    background:
-        linear-gradient(to bottom, rgba(20, 14, 4, 0.25), var(--bg) 98%),
-        linear-gradient(90deg, rgba(20, 14, 4, 0.55), transparent 75%);
+body.light-mode .hamburger {
+    background: rgba(0, 0, 0, 0.06);
 }
 
-body.light-mode .hero-title {
+body.light-mode .hamburger span {
+    background: #111111;
+}
+
+body.light-mode .theme-toggle {
+    background: rgba(201, 162, 39, 0.15);
+    color: var(--gold-light);
+}
+
+body.light-mode .theme-toggle:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+/* ---------- Buttons ---------- */
+
+body.light-mode .btn-primary:hover {
+    background: #dcb73a;
+}
+
+body.light-mode .btn-ghost {
+    background: rgba(0, 0, 0, 0.07);
+    color: #111111;
+}
+
+body.light-mode .btn-ghost:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+body.light-mode .hero .btn-ghost,
+body.light-mode .cta-section .btn-ghost {
+    background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
 }
 
-body.light-mode .hero-sub {
-    color: #ece4d0;
+body.light-mode .hero .btn-ghost:hover,
+body.light-mode .cta-section .btn-ghost:hover {
+    background: var(--gold);
+    color: #080808;
 }
+
+/* ---------- Hero (stays dark) ---------- */
+
+body.light-mode .hero-overlay {
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), #0a0a0a),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.4), transparent);
+}
+
+body.light-mode .hero-title {
+    color: #f5f5f5;
+}
+
+/* ---------- Sections ---------- */
 
 body.light-mode .section {
     background: var(--bg);
@@ -1202,128 +1251,104 @@ body.light-mode .section-dark {
     background: var(--bg-soft);
 }
 
-body.light-mode .section-desc {
-    color: #5c5240;
+body.light-mode .section-tag,
+body.light-mode .fighter-info p,
+body.light-mode .news-date,
+body.light-mode .nutrition-result-label {
+    color: var(--gold-light);
 }
+
+/* ---------- Disciplines ---------- */
 
 body.light-mode .discipline-card {
     background: var(--card);
     border: none;
-    box-shadow: 0 4px 14px rgba(110, 80, 10, 0.10);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
-body.light-mode .card-overlay {
-    background: linear-gradient(
-        to top,
-        rgba(20, 14, 4, 0.92) 8%,
-        rgba(20, 14, 4, 0.30) 70%,
-        rgba(20, 14, 4, 0.05)
-    );
+body.light-mode .discipline-card:hover {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
 }
 
 body.light-mode .card-content h3 {
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
-body.light-mode .card-content p {
-    color: #eee6d2;
+body.light-mode .discipline-card::after {
+    border: none;
+    color: #e5c45a;
 }
+
+/* ---------- Fighters ---------- */
 
 body.light-mode .fighter-card {
     background: var(--card);
     border: none;
-    box-shadow: 0 4px 14px rgba(110, 80, 10, 0.10);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
 }
+
+body.light-mode .fighter-card:hover {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
+}
+
+body.light-mode .filter-btn {
+    background: #e9e5da;
+    color: #555555;
+}
+
+body.light-mode .filter-btn:hover,
+body.light-mode .filter-btn.active {
+    background: var(--gold);
+    color: #080808;
+}
+
+/* ---------- Events ---------- */
 
 body.light-mode .event-card {
     background: var(--card);
     border: none;
-    box-shadow: 0 4px 14px rgba(110, 80, 10, 0.10);
-}
-
-body.light-mode .event-info p {
-    color: #5c5240;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
 body.light-mode .event-date {
     border: none;
 }
 
+body.light-mode .event-date .month,
+body.light-mode .event-info p {
+    color: #666666;
+}
+
+/* ---------- News ---------- */
+
 body.light-mode .news-card {
     background: var(--card);
     border: none;
-    box-shadow: 0 4px 14px rgba(110, 80, 10, 0.10);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+body.light-mode .news-card:hover {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
 }
 
 body.light-mode .news-content p {
-    color: #5c5240;
+    color: #555555;
 }
 
-body.light-mode .filter-btn {
-    background: #eadfc0;
-    color: #5c5240;
-}
-
-body.light-mode .filter-btn:hover,
-body.light-mode .filter-btn.active {
-    background: var(--gold);
-    color: #1d1608;
-}
-
-body.light-mode .btn-outline {
-    background: rgba(201, 150, 26, 0.18);
-}
-
-body.light-mode .btn-outline:hover {
-    background: var(--gold);
-    color: #1d1608;
-}
+/* ---------- CTA (stays dark) ---------- */
 
 body.light-mode .cta-section {
-    background:
-        radial-gradient(circle at center, rgba(201, 150, 26, 0.22), transparent 50%),
-        #f1e7cb;
     border: none;
 }
 
-body.light-mode .cta-content p {
-    color: #5c5240;
+body.light-mode .cta-content h2 {
+    color: #f5f5f5;
 }
 
-body.light-mode .footer {
-    background: #e9dfc2;
-}
-
-body.light-mode .footer-brand p,
-body.light-mode .footer-links a {
-    color: #5c5240;
-}
+/* ---------- Footer (stays dark) ---------- */
 
 body.light-mode .footer-bottom {
     border: none;
-    color: #8a7e66;
-}
-
-body.light-mode .hamburger {
-    background: rgba(122, 86, 0, 0.10);
-}
-
-body.light-mode .hamburger span {
-    background: #2a2216;
-}
-
-body.light-mode .nav-links {
-    border: none;
-}
-
-body.light-mode .theme-toggle {
-    background: rgba(201, 150, 26, 0.16);
-    color: var(--gold-light);
-}
-
-body.light-mode .theme-toggle:hover {
-    background: var(--gold);
-    color: #1d1608;
 }
 
 
@@ -1484,7 +1509,7 @@ body.light-mode .nutrition-form,
 body.light-mode .nutrition-result-card {
     background: var(--card);
     border: none;
-    box-shadow: 0 4px 14px rgba(110, 80, 10, 0.10);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
 body.light-mode .nutrition-result-card.featured {
@@ -1493,20 +1518,26 @@ body.light-mode .nutrition-result-card.featured {
 
 body.light-mode .nutrition-input-group input,
 body.light-mode .nutrition-input-group select {
-    background: #f3ead0;
+    background: #f3f1ea;
     border: none;
-    color: #2a2216;
+    color: #111111;
+}
+
+body.light-mode .nutrition-input-group input:focus,
+body.light-mode .nutrition-input-group select:focus {
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.35);
 }
 
 body.light-mode .nutrition-input-group select option {
-    background: #fffdf6;
-    color: #2a2216;
+    background: #ffffff;
+    color: #111111;
 }
 
 body.light-mode .nutrition-note {
     border: none;
-    background: rgba(201, 150, 26, 0.12);
 }
+
 
 
 /* ==================== CHATBOT ==================== */
@@ -1633,22 +1664,21 @@ body.light-mode .nutrition-note {
 
 /* ==================== CHATBOT LIGHT MODE ==================== */
 
-
 body.light-mode .chatbot-container {
     background: var(--card);
     border: none;
-    box-shadow: 0 12px 32px rgba(110, 80, 10, 0.14);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 body.light-mode .chatbot-header {
     border: none;
-    background: #f6edd2;
+    background: #faf8f2;
 }
 
 body.light-mode .chatbot-message.bot {
     border: none;
-    background: #f3ead0;
-    color: #2a2216;
+    background: #f1eee6;
+    color: #222222;
 }
 
 body.light-mode .chatbot-options {
@@ -1656,14 +1686,15 @@ body.light-mode .chatbot-options {
 }
 
 body.light-mode .chatbot-option {
-    background: #eadfc0;
-    color: #2a2216;
+    background: #ebe7dc;
+    color: #111111;
 }
 
 body.light-mode .chatbot-option:hover {
     background: var(--gold);
-    color: #1d1608;
+    color: #111111;
 }
+
 
 
 /* ==================== CHATBOT MOBILE ==================== */
@@ -1792,16 +1823,17 @@ body.light-mode .chatbot-option:hover {
 body.light-mode .success-notification {
     background: var(--card);
     border: none;
-    box-shadow: 0 15px 40px rgba(110, 80, 10, 0.18);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
 }
 
 body.light-mode .success-notification p {
-    color: #5c5240;
+    color: #666666;
 }
 
 body.light-mode .success-notification b {
-    color: #2a2216;
+    color: #111111;
 }
+
 
 
 @media (max-width: 560px) {
