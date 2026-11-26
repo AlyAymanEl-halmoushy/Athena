@@ -1340,9 +1340,8 @@ body.light-mode .cta-content h2 {
     color: #f5f5f5;
 }
 
-/* ---------- Footer (stays dark) ---------- */
-
 body.light-mode .footer-bottom {
+    background: #ffffff;
     border: none;
 }
 
